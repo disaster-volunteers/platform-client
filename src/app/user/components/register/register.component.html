@@ -2,22 +2,22 @@
 
   <form action="" class="auth-form">
     <label for="email">
-      <input class="basic-input" type="email" name="email" id="email" placeholder="Имейл">
+      <input [(ngModel)]="model.username" class="basic-input" type="email" name="username" id="email" placeholder="Имейл">
     </label>
 
     <label for="name">
-      <input class="basic-input" type="name" name="name" id="name" placeholder="Име">
+      <input [(ngModel)]="model.name" class="basic-input" type="name" name="name" id="name" placeholder="Име">
     </label>
 
     <label for="password">
-      <input class="basic-input" type="password" name="password" id="password" placeholder="Парола">
+      <input [(ngModel)]="model.password" class="basic-input" type="password" name="password" id="password" placeholder="Парола">
     </label>
 
     <label for="confirm">
-      <input class="basic-input" type="password" name="confirm" id="confirm" placeholder="Потвърждаване на паролата">
+      <input [(ngModel)]="model.confirm" class="basic-input" type="password" name="confirm" id="confirm" placeholder="Потвърждаване на паролата">
     </label>
 
-    <button type="submit" class="main-button">Регистрация</button>
+    <button type="submit" class="main-button" (click)="register()">Регистрация</button>
 
     <p>Вече имаш акаунт? <a class="basic-href" routerLink="/login">Влез</a></p>
   </form>

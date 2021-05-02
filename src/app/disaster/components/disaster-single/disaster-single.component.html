@@ -1,0 +1,14 @@
+<section class="single-disaster">
+  <h2><i [class]="disaster.type.iconUrl"></i> {{disaster.type.name}}</h2>
+  <h3>Координати: {{disaster.coordinates}}</h3>
+  <h3>Доброволци:</h3>
+  <ul>
+    <li *ngFor="let v of disaster.volunteers">{{v.name}}</li>
+  </ul>
+  <h3>Брой хора, заявили, че ще помогнат: {{disaster.outerHelp}}</h3>
+  <h4>Информация:</h4>
+  <p *ngIf="!disaster.resolved">{{disaster.essentials}}</p>
+  <p *ngIf="disaster.resolved">{{disaster.finalMessage}}</p>
+
+  <button class="main-button" *ngIf="!disaster.resolved" (click)="volunteer()">Ще помогна!</button>
+</section>

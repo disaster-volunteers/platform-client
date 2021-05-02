@@ -54,8 +54,8 @@ p {
   }
 
   .disaster-type.selected {
-    i, p {
-      color: #811411 !important;
+    i {
+      color: #811411;
     }
   }
 }
@@ -64,7 +64,7 @@ form {
   text-align: center;
   textarea {
     resize: none;
-    width: 30em;
+    width: 40em;
   }
 
   button {

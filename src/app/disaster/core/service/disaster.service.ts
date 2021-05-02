@@ -13,6 +13,13 @@ export class DisasterService {
 
   }
 
+  public getAll(): Observable<DisasterResponse[]> {
+    return this.http.get<DisasterResponse[]>(
+      environment.api
+      + Constants.Disaster.prefix
+    );
+  }
+
   public getTypes(): Observable<DisasterTypeResponse[]> {
     return this.http.get<DisasterTypeResponse[]>(
       environment.api
@@ -28,4 +35,15 @@ export class DisasterService {
       model
     );
   }
+
+  public volunteer(id: number): Observable<DisasterResponse> {
+    return this.http.patch<DisasterResponse>(
+      environment.api
+      + Constants.Disaster.prefix
+      + `/${id}`
+      + Constants.Disaster.volunteer,
+      {}
+    );
+  }
+
 }

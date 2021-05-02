@@ -3,7 +3,7 @@ export class UserRequest {
     public username: string = '',
     public name: string = '',
     public password: string = '',
-    public confirm: string = ','
+    public confirm: string = ''
   ) {
 
   }

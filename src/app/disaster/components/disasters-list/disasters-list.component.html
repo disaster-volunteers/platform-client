@@ -1,0 +1,6 @@
+<section *ngIf="resolvedDisasters || activeDisasters" class="main-container">
+  <h1>Бедствия в момента</h1>
+  <dv-disaster-single (volunteerEmitter)="volunteer($event)" *ngFor="let disaster of activeDisasters" [disaster]="disaster"></dv-disaster-single>
+  <h1>Архив</h1>
+  <dv-disaster-single *ngFor="let disaster of resolvedDisasters" [disaster]="disaster"></dv-disaster-single>
+</section>

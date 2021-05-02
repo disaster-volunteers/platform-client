@@ -1,10 +1,20 @@
-<div class="auth-icons">
+<div class="auth-icons" *ngIf="!isAuthenticated()">
   <a routerLink="/login">
     <i class="fas fa-sign-in-alt"></i>
   </a>
 
   <a href="/register">
     <i class="fas fa-user-plus"></i>
+  </a>
+</div>
+
+<div class="auth-icons" *ngIf="isAuthenticated()">
+  <a routerLink="/profile">
+    <i class="fas fa-user-circle"></i>
+  </a>
+
+  <a (click)="logout()">
+    <i class="fas fa-sign-out-alt"></i>
   </a>
 </div>
 
@@ -15,7 +25,9 @@
       Сигнализирай
     </button>
 
-    <button class="main-button">
+    <button routerLink="/disasters"
+            [class.main-button]="!activeDisasters"
+            [class.alternate-button]="activeDisasters">
       Бедствия
     </button>
 

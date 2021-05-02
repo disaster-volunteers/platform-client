@@ -11,6 +11,8 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ToastrModule} from 'ngx-toastr';
+import { DisastersListComponent } from './components/disasters-list/disasters-list.component';
+import { DisasterSingleComponent } from './components/disaster-single/disaster-single.component';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import {ToastrModule} from 'ngx-toastr';
     LandingGuestsComponent,
     MapComponent,
     LandingComponent,
-    ReportComponent
+    ReportComponent,
+    DisastersListComponent,
+    DisasterSingleComponent
   ],
   providers: [
     DisasterService
