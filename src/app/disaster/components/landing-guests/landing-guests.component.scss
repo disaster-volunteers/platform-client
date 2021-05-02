@@ -1,0 +1,28 @@
+section {
+  height: 50vh;
+  background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)),
+  url('../../../../assets/ff-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding: 0 10%;
+}
+
+.main-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.auth-icons {
+  position: absolute;
+  right: 0;
+  margin-right: 10%;
+  margin-top: 1em;
+
+  i {
+    font-size: 1.2em;
+    margin-left: 0.6em;
+  }
+}

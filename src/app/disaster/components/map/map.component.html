@@ -1,0 +1,15 @@
+<label class="address-label" for="address" *ngIf="showSearch">
+  <input type="text" id="address" class="form-control" (keydown.enter)="$event.preventDefault()"
+         placeholder="Въведи локация" #search>
+</label>
+
+<agm-map
+  [latitude]="latitude"
+  [longitude]="longitude"
+  [zoom]="zoom">
+  <agm-marker
+    [latitude]="latitude"
+    [longitude]="longitude"></agm-marker>
+</agm-map>
+
+<button class="alternate-button" *ngIf="showButton" (click)="submitCoordinates()">Избери</button>

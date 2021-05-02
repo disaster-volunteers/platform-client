@@ -1,0 +1,42 @@
+<section class="main-container">
+  <section class="report-screen">
+
+    <section class="report-area">
+
+      <div class="disaster-types" *ngIf="disasterTypes">
+        <section *ngFor="let dt of disasterTypes" class="disaster-type"
+                 (click)="setType(dt.id)"
+                 [class.selected]="compareToSelected(dt.id)">
+          <i [class]="dt.iconUrl"></i>
+          <p>{{dt.name}}</p>
+        </section>
+      </div>
+
+      <p>Координати: {{model.coordinates}}</p>
+
+      <form>
+        <label for="description">
+          <textarea class="basic-input"
+                    name="description"
+                    rows="10" id="description"
+                    placeholder="Вашият сигнал"
+                    [(ngModel)]="model.description"></textarea>
+        </label>
+
+        <br>
+
+        <button type="submit" class="main-button"
+                [disabled]="getInvalid()"
+                (click)="submitReport()"
+        >Сигнализирай</button>
+      </form>
+
+    </section>
+  </section>
+
+  <dv-map
+    (setCoordinatesEmitter)="setCoordinates($event)"
+    [showButton]="true"
+    [showSearch]="true"
+  ></dv-map>
+</section>

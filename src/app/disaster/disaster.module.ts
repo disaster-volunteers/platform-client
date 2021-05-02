@@ -1,0 +1,40 @@
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {LandingGuestsComponent} from './components/landing-guests/landing-guests.component';
+import {MapComponent} from './components/map/map.component';
+import {AgmCoreModule} from '@agm/core';
+import {DisasterRouting} from './disaster-routing.module';
+import { LandingComponent } from './components/landing/landing.component';
+import { ReportComponent } from './components/report/report.component';
+import {DisasterService} from './core/service/disaster.service';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ToastrModule} from 'ngx-toastr';
+
+
+@NgModule({
+  declarations: [
+    LandingGuestsComponent,
+    MapComponent,
+    LandingComponent,
+    ReportComponent
+  ],
+  providers: [
+    DisasterService
+  ],
+  imports: [
+    DisasterRouting,
+    CommonModule,
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: '',
+      libraries: ['places']
+    }),
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
+    FormsModule
+  ]
+})
+export class DisasterModule {
+}

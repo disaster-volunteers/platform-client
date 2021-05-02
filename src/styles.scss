@@ -1,1 +1,71 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;1,400&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+i {
+  color: #EA4335;
+
+  &:hover {
+    color: darken(#EA4335, 8);
+  }
+}
+
+.main-button, .alternate-button {
+  all: unset;
+  border: 2.3px solid #EA4335;
+  border-radius: 8px;
+  padding: 0.4em 1.3em;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+}
+
+.main-button:disabled {
+  cursor: not-allowed;
+}
+
+.main-button {
+  color: #EA4335;
+
+  &:hover {
+    background-color: #EA4335;
+    color: #ffffff;
+  }
+}
+
+.alternate-button {
+  color: #ffffff;
+  background-color: #EA4335;
+
+  &:hover {
+    background-color: darken(#EA4335, 8);
+  }
+}
+
+.basic-href {
+  color: #EA4335;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.basic-input {
+  outline: none;
+  border: 2.3px solid #EA4335;
+  color: #EA4335;
+  border-radius: 8px;
+  padding: 0.4em 1.3em;
+  background-color: rgba(0, 0, 0, 0.2);
+  box-shadow: none;
+
+  &:focus {
+    background-color: rgba(0, 0, 0, 2);
+  }
+}

@@ -1,0 +1,73 @@
+.main-container {
+  display: flex;
+}
+
+::ng-deep dv-map agm-map {
+  position: absolute;
+  right: 0;
+  height: 100vh;
+  width: 30vw;
+}
+
+.report-screen {
+  height: calc(100vh);
+  width: calc(70vw);
+  background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)),
+  url('../../../../assets/f-bg.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.report-area {
+  padding: 5%;
+}
+
+p {
+  margin: 1em 0;
+  color: #EA4335;
+  text-align: center;
+}
+
+.disaster-types {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  .disaster-type {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #EA4335;
+    font-size: 1.5em;
+    margin-bottom: 1em;
+    cursor: pointer;
+
+    i {
+      font-size: 1em;
+    }
+
+    &:hover {
+      color: darken(#EA4335, 8);
+    }
+  }
+
+  .disaster-type.selected {
+    i, p {
+      color: #811411 !important;
+    }
+  }
+}
+
+form {
+  text-align: center;
+  textarea {
+    resize: none;
+    width: 30em;
+  }
+
+  button {
+    margin-top: 1em;
+  }
+}
