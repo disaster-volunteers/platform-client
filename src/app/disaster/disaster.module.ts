@@ -16,7 +16,6 @@ import { DisasterSingleComponent } from './components/disaster-single/disaster-s
 import { DisasterDetailsComponent } from './components/disaster-details/disaster-details.component';
 import {SharedModule} from '../shared/shared.module';
 
-
 @NgModule({
   declarations: [
     LandingGuestsComponent,
@@ -36,7 +35,7 @@ import {SharedModule} from '../shared/shared.module';
     HttpClientModule,
     SharedModule,
     AgmCoreModule.forRoot({
-      apiKey: '',
+      apiKey: 'AIzaSyDS9q2bfOep2OlZCFWgW9KaCsIHopKo354',
       libraries: ['places']
     }),
     BrowserAnimationsModule,

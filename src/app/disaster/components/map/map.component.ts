@@ -1,5 +1,6 @@
 import {Component, ElementRef, EventEmitter, Input, NgZone, OnInit, Output, ViewChild} from '@angular/core';
 import {MapsAPILoader} from '@agm/core';
+import {CurrentDisasterMapModel} from '../../core/payload/current-disaster-map.model';
 
 @Component({
   selector: 'dv-map',
@@ -10,6 +11,7 @@ export class MapComponent implements OnInit {
   @Output() setCoordinatesEmitter = new EventEmitter<string>();
   @Input() showSearch = false;
   @Input() showButton = false;
+  @Input() currentDisasters: CurrentDisasterMapModel[] = [];
 
   latitude = 42.254692;
   longitude = 23.132930;

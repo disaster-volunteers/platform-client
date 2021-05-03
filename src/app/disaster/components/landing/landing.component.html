@@ -1,2 +1,2 @@
-<dv-landing-guests></dv-landing-guests>
-<dv-map></dv-map>
+<dv-landing-guests [activeDisasters]="activeDisasters"></dv-landing-guests>
+<dv-map *ngIf="hasChecked" [currentDisasters]="currentDisastersMap"></dv-map>

@@ -9,7 +9,15 @@
   [zoom]="zoom">
   <agm-marker
     [latitude]="latitude"
-    [longitude]="longitude"></agm-marker>
+    [longitude]="longitude">
+  </agm-marker>
+
+  <agm-marker *ngFor="let disaster of currentDisasters"
+    [latitude]="disaster.latitude"
+    [longitude]="disaster.longitude"
+    [iconUrl]="{ url: disaster.iconUrl, labelOrigin: {x:22.5,y:20}, scaledSize: {height: 45,width: 45}}"
+  >
+  </agm-marker>
 </agm-map>
 
 <button class="alternate-button" *ngIf="showButton" (click)="submitCoordinates()">Избери</button>
