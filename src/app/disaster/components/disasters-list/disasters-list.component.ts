@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {DisasterResponse} from '../../core/payload/disaster.response';
 import {DisasterService} from '../../core/service/disaster.service';
 import {ToastrService} from 'ngx-toastr';
+import {AuthenticationService} from '../../../shared/service/authentication.service';
 
 @Component({
   selector: 'dv-disasters-list',
@@ -14,6 +15,7 @@ export class DisastersListComponent implements OnInit {
 
   constructor(
     private disasterService: DisasterService,
+    private authenticationService: AuthenticationService,
     public toastrService: ToastrService
   ) { }
 
@@ -28,6 +30,7 @@ export class DisastersListComponent implements OnInit {
   volunteer(id) {
     this.disasterService.guestVolunteer(id)
       .subscribe(res => {
+        this.authenticationService.setOuterHelped(id);
         this.toastrService.success('Успешно заяви участието си. Благодарим ти!');
       });
   }

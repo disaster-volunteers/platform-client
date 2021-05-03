@@ -35,7 +35,7 @@ import {SharedModule} from '../shared/shared.module';
     HttpClientModule,
     SharedModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDS9q2bfOep2OlZCFWgW9KaCsIHopKo354',
+      apiKey: '',
       libraries: ['places']
     }),
     BrowserAnimationsModule,

@@ -10,6 +10,6 @@
   <p *ngIf="!disaster.resolved">{{disaster.essentials}}</p>
   <p *ngIf="disaster.resolved">{{disaster.finalMessage}}</p>
 
-  <button class="main-button" *ngIf="!disaster.resolved && !authenticationService.isAuthenticated()" (click)="volunteer()">Ще помогна!</button>
+  <button class="main-button" *ngIf="!disaster.resolved && !authenticationService.isAuthenticated() && !willHelp()" (click)="volunteer()">Ще помогна!</button>
   <button class="main-button" *ngIf="!disaster.resolved && authenticationService.isAuthenticated()" [routerLink]="['/disasters', disaster.id]">Детайли</button>
 </section>

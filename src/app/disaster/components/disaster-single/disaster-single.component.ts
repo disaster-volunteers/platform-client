@@ -24,4 +24,8 @@ export class DisasterSingleComponent implements OnInit {
     this.volunteerEmitter.emit(this.disaster.id);
     this.disaster.outerHelp++;
   }
+
+  willHelp() {
+    return this.authenticationService.getHelpingData(this.disaster.id);
+  }
 }

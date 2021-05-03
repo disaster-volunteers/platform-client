@@ -61,7 +61,7 @@ export class DisasterService {
       environment.api
       + Constants.Disaster.prefix
       + `/${id}`
-      + Constants.Disaster.guest,
+      + Constants.Disaster.guest
       + Constants.Disaster.volunteer,
       {}
     );
