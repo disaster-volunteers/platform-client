@@ -2,7 +2,7 @@
   display: flex;
 }
 
-::ng-deep dv-map agm-map {
+::ng-deep .report-map agm-map {
   position: absolute;
   right: 0;
   height: 100vh;
