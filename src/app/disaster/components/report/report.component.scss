@@ -18,6 +18,29 @@
   background-position: center;
 }
 
+@media (max-width: 1000px) {
+  .main-container {
+    flex-direction: column;
+  }
+  ::ng-deep .report-map agm-map {
+    position: relative;
+    width: 100%;
+  }
+
+  ::ng-deep .report-map .alternate-button {
+    margin-bottom: -2em !important;
+  }
+
+  .report-screen {
+    height: unset;
+    width: 100%;
+  }
+
+  textarea {
+    width: 70% !important;
+  }
+}
+
 .report-area {
   padding: 5%;
 }
