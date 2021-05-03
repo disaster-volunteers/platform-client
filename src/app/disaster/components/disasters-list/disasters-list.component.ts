@@ -26,7 +26,7 @@ export class DisastersListComponent implements OnInit {
   }
 
   volunteer(id) {
-    this.disasterService.volunteer(id)
+    this.disasterService.guestVolunteer(id)
       .subscribe(res => {
         this.toastrService.success('Успешно заяви участието си. Благодарим ти!');
       });
