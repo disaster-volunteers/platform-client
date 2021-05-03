@@ -3,6 +3,7 @@ import {AuthRequest} from '../../core/payload/auth.request';
 import {UserService} from '../../core/UserService';
 import {ToastrService} from 'ngx-toastr';
 import {Router} from '@angular/router';
+import {AuthenticationService} from '../../../shared/service/authentication.service';
 
 @Component({
   selector: 'dv-login',
@@ -15,7 +16,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private userService: UserService,
     private toastrService: ToastrService,
-    private router: Router
+    private router: Router,
+    public authenticationService: AuthenticationService
   ) {
   }
 
@@ -25,7 +27,11 @@ export class LoginComponent implements OnInit {
   login() {
     this.userService.login(this.model)
       .subscribe(res => {
-        this.userService.saveLoginInfo(res.token);
+        this.authenticationService.saveUserData(res.token, 1);
+
+        this.userService.myProfile()
+          .subscribe(profile => this.authenticationService.saveUserData(res.token, profile.id));
+
         this.toastrService.success('Успешен вход.');
         this.router.navigate(['/']);
       }, () => {

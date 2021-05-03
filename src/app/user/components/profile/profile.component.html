@@ -1,0 +1,4 @@
+<section class="profile-container">
+  <dv-profile-details (editEmitter)="editMode = true" [user]="user" *ngIf="!editMode && user"></dv-profile-details>
+  <dv-profile-edit *ngIf="editMode && user" [model]="model" (submitEmitter)="submit($event)"></dv-profile-edit>
+</section>

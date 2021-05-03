@@ -1,0 +1,39 @@
+<div class="main-container">
+
+  <div class="single-disaster" *ngIf="disaster">
+
+    <h2><i [class]="disaster.type.iconUrl"></i> {{disaster.type.name}}</h2>
+    <h3>Координати: {{disaster.coordinates}}</h3>
+    <h3>Доброволци:</h3>
+    <ul>
+      <li *ngFor="let v of disaster.volunteers">{{v.name}}</li>
+    </ul>
+    <h3>Брой хора, заявили, че ще помогнат: {{disaster.outerHelp}}</h3>
+    <h4>Сигнал:</h4>
+    <p>{{disaster.description}}</p>
+    <h4>Информация:</h4>
+
+    <textarea *ngIf="essentials" style="width: 100%;" [(ngModel)]="essentialsModel.essentials" class="basic-input" name="essentials" cols="30" rows="10"></textarea>
+
+    <p *ngIf="!disaster.resolved && !essentials">{{disaster.essentials}}</p>
+    <p *ngIf="disaster.resolved">{{disaster.finalMessage}}</p>
+
+    <div class="edit-controls" *ngIf="!disaster.resolved">
+
+      <button class="main-button" *ngIf="!essentials" (click)="essentials = !essentials">Редакция на
+        публичната информация
+      </button>
+
+      <button class="main-button" *ngIf="essentials" (click)="saveEssentials()">Запази</button>
+
+      <button class="main-button" *ngIf="!hasVolunteered()" (click)="volunteer()">Присъединявам се</button>
+
+      <textarea [(ngModel)]="finalMessageModel.message" placeholder="Финално съобщение" class="basic-input" name="finalMessage" id="" cols="30" rows="10"></textarea>
+
+      <button class="main-button" (click)="resolve()">Обявяване на край</button>
+
+    </div>
+
+  </div>
+
+</div>

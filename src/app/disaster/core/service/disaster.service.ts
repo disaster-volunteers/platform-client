@@ -5,6 +5,8 @@ import {environment} from '../../../../environments/environment';
 import {Constants} from '../constants/constants';
 import {DisasterResponse} from '../payload/disaster.response';
 import {DisasterRequest} from '../payload/disaster.request';
+import {EssentialsRequest} from '../payload/essentials.request';
+import {FinalMessageRequest} from '../payload/final-message.request';
 
 export class DisasterService {
   constructor(
@@ -17,6 +19,14 @@ export class DisasterService {
     return this.http.get<DisasterResponse[]>(
       environment.api
       + Constants.Disaster.prefix
+    );
+  }
+
+  public getOneById(id: number): Observable<DisasterResponse> {
+    return this.http.get<DisasterResponse>(
+      environment.api
+      + Constants.Disaster.prefix
+      + `/${id}`
     );
   }
 
@@ -43,6 +53,37 @@ export class DisasterService {
       + `/${id}`
       + Constants.Disaster.volunteer,
       {}
+    );
+  }
+
+  public guestVolunteer(id: number): Observable<DisasterResponse> {
+    return this.http.patch<DisasterResponse>(
+      environment.api
+      + Constants.Disaster.prefix
+      + `/${id}`
+      + Constants.Disaster.guest,
+      + Constants.Disaster.volunteer,
+      {}
+    );
+  }
+
+  public essentials(id: number, model: EssentialsRequest): Observable<DisasterResponse> {
+    return this.http.patch<DisasterResponse>(
+      environment.api
+      + Constants.Disaster.prefix
+      + `/${id}`
+      + Constants.Disaster.essentials,
+      model
+    );
+  }
+
+  public resolve(id: number, model: FinalMessageRequest): Observable<DisasterResponse> {
+    return this.http.patch<DisasterResponse>(
+      environment.api
+      + Constants.Disaster.prefix
+      + `/${id}`
+      + Constants.Disaster.resolve,
+      model
     );
   }
 

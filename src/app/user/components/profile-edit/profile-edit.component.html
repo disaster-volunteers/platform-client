@@ -1,0 +1,12 @@
+<form action="" class="auth-form">
+  <label for="name">
+    <input [(ngModel)]="model.name" class="basic-input" type="email" name="name" id="name" placeholder="Име">
+  </label>
+
+  <label for="textarea">
+    <textarea class="basic-input" [(ngModel)]="model.description" name="textarea" id="textarea" cols="30" rows="10"></textarea>
+  </label>
+
+  <button type="submit" class="main-button" (click)="submit()">Запази</button>
+
+</form>

@@ -1,0 +1,19 @@
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #EA4335;
+
+  label {
+    margin-bottom: 1.2em;
+  }
+
+  button {
+    width: 50%;
+  }
+
+  p {
+    margin: 1em 0;
+  }
+}

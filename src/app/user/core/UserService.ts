@@ -39,8 +39,17 @@ export class UserService {
     );
   }
 
+  public myProfile(): Observable<UserResponse> {
+    return this.http.get<UserResponse>(
+      environment.api
+      + Constants.User.prefix
+      + Constants.User.me
+    );
+  }
+
+
   public editProfile(model: ProfileRequest): Observable<UserResponse> {
-    return this.http.post<UserResponse>(
+    return this.http.patch<UserResponse>(
       environment.api
       + Constants.User.prefix
       + Constants.User.me,
@@ -56,13 +65,5 @@ export class UserService {
       + Constants.User.availability,
       {}
     );
-  }
-
-  public saveLoginInfo(token: string) {
-    localStorage.setItem('token', token);
-  }
-
-  public logout() {
-    localStorage.clear();
   }
 }

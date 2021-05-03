@@ -1,4 +1,4 @@
-<div class="auth-icons" *ngIf="!isAuthenticated()">
+<div class="auth-icons" *ngIf="!authenticationService.isAuthenticated()">
   <a routerLink="/login">
     <i class="fas fa-sign-in-alt"></i>
   </a>
@@ -8,12 +8,12 @@
   </a>
 </div>
 
-<div class="auth-icons" *ngIf="isAuthenticated()">
+<div class="auth-icons" *ngIf="authenticationService.isAuthenticated()">
   <a routerLink="/profile">
     <i class="fas fa-user-circle"></i>
   </a>
 
-  <a (click)="logout()">
+  <a routerLink="/" (click)="logout()">
     <i class="fas fa-sign-out-alt"></i>
   </a>
 </div>

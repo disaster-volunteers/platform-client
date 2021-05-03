@@ -51,6 +51,22 @@ i {
   }
 }
 
+.single-disaster {
+  padding: 1em;
+  background-color: rgba(0, 0, 0, 1);
+  width: 70%;
+  margin: 0 auto 1em auto;
+  text-align: justify;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+li {
+  list-style: inside;
+}
+
 .basic-href {
   color: #EA4335;
   text-decoration: none;

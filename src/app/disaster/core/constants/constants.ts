@@ -4,6 +4,7 @@ export class Constants {
     public static types = '/types';
     public static report = '/report';
     public static volunteer = '/volunteer';
+    public static guest = '/guest';
     public static essentials = '/essentials';
     public static resolve = '/resolve';
   };

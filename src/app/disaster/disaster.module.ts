@@ -13,6 +13,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ToastrModule} from 'ngx-toastr';
 import { DisastersListComponent } from './components/disasters-list/disasters-list.component';
 import { DisasterSingleComponent } from './components/disaster-single/disaster-single.component';
+import { DisasterDetailsComponent } from './components/disaster-details/disaster-details.component';
+import {SharedModule} from '../shared/shared.module';
 
 
 @NgModule({
@@ -22,7 +24,8 @@ import { DisasterSingleComponent } from './components/disaster-single/disaster-s
     LandingComponent,
     ReportComponent,
     DisastersListComponent,
-    DisasterSingleComponent
+    DisasterSingleComponent,
+    DisasterDetailsComponent
   ],
   providers: [
     DisasterService
@@ -31,6 +34,7 @@ import { DisasterSingleComponent } from './components/disaster-single/disaster-s
     DisasterRouting,
     CommonModule,
     HttpClientModule,
+    SharedModule,
     AgmCoreModule.forRoot({
       apiKey: '',
       libraries: ['places']

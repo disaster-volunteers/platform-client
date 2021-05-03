@@ -1,0 +1,33 @@
+.main-container {
+  min-height: calc(100vh);
+  background-color: #000000;
+  background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)),
+  url('../../../../assets/ff-d-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #EA4335;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.single-disaster {
+}
+
+textarea {
+  //width: 100%;
+  resize: none;
+  margin: 1em 0;
+}
+
+button {
+  margin-right: 1em;
+  max-width: 20em;
+  margin-top: 1em;
+}
+
+.edit-controls {
+  display: flex;
+  flex-direction: column;
+}

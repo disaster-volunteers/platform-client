@@ -1,0 +1,10 @@
+<section class="profile-data">
+<!--  <p *ngIf="user.available">В момента съм на линия за оказване на помощ.</p>-->
+<!--  <br>-->
+
+  <p>Име: {{user.name}}</p>
+  <p>Имейл: {{user.username}}</p>
+  <p>Описание: {{user.decription}}</p>
+
+  <button class="main-button" (click)="editEmitter.emit()">Редакция</button>
+</section>

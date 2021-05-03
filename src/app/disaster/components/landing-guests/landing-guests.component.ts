@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {DisasterService} from '../../core/service/disaster.service';
+import {AuthenticationService} from '../../../shared/service/authentication.service';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'dv-landing-guests',
@@ -10,7 +12,9 @@ export class LandingGuestsComponent implements OnInit {
   public activeDisasters = false;
 
   constructor(
-    private disasterService: DisasterService
+    private disasterService: DisasterService,
+    public authenticationService: AuthenticationService,
+    public toastrService: ToastrService
   ) {
   }
 
@@ -25,11 +29,8 @@ export class LandingGuestsComponent implements OnInit {
       });
   }
 
-  isAuthenticated() {
-    return localStorage.getItem('token') !== undefined;
-  }
-
   logout() {
-    localStorage.clear();
+    this.authenticationService.logout();
+    this.toastrService.success('Успешен изход!');
   }
 }
